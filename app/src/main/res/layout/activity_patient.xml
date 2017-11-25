@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.genesis.cloudcarepatient.PatientActivity"
+    android:background="@drawable/backsign"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+
+
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:padding="5dp"
+        android:background="@drawable/backsign"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerInParent="true"
+                android:src="#000"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/personimage"/>
+
+
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:paddingRight="25dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="#ffffee"
+                android:id="@+id/personname"
+                android:textSize="22dp"/>
+
+            <TextView
+                android:paddingRight="25dp"
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phn number"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffee"
+                android:id="@+id/personphone"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:paddingRight="25dp"
+                android:layout_margin="1dp"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffee"
+                android:layout_height="wrap_content"
+                android:text="aachi.mec@gmail.com"
+                android:id="@+id/personemail"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:paddingRight="25dp"
+                android:layout_margin="1dp"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffee"
+                android:layout_height="wrap_content"
+                android:text="B +ve"
+                android:id="@+id/personbloodgroup"
+                android:textSize="12dp"/>
+
+
+            <TextView
+                android:paddingRight="25dp"
+                android:layout_margin="1dp"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffee"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:id="@+id/persongender"
+                android:textSize="12dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    <!--<com.luseen.spacenavigation.SpaceNavigationView-->
+    <!--android:id="@+id/space"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:gravity="bottom"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--app:layout_behavior="com.luseen.spacenavigation.SpaceNavigationViewBehavior" />-->
+
+</LinearLayout>

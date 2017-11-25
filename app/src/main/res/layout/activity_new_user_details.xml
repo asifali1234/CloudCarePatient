@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backsign"
+    android:orientation="vertical"
+    >
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/backsign"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/space_transparent"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:minHeight="?attr/actionBarSize"
+                android:textAlignment="center"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="28dp"
+                    android:textColor="#fff"
+                    android:text="Patient Registration"/>
+
+
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_margin="40dp"
+                android:id="@+id/form_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/form_group_shape"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="123dp"
+                        android:layout_height="123dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="#000"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/personimage"/>
+
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="30dp"
+                    android:background="@android:color/transparent"
+                    android:maxLines="1"
+                    android:id="@+id/patient_name"
+                    android:text="NAME"
+                    android:textColor="#000"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="30dp"
+                    android:background="@android:color/transparent"
+                    android:maxLines="1"
+                    android:textColor="#000"
+                    android:id="@+id/patient_email"
+                    android:text="Email"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="12dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_form_group_separator_height"
+                    android:background="@android:color/darker_gray" />
+
+
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Mobile Number"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_form_group_separator_height"
+                    android:background="@android:color/darker_gray" />
+
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Address"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="5"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_form_group_separator_height"
+                    android:background="@android:color/darker_gray" />
+
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_aadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Adhaar UID No:"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="5"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:id="@+id/form_group2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/form_group_shape"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+                
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_blood"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Blood Group"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_form_group_separator_height"
+                    android:background="@android:color/darker_gray" />
+
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Gender"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_form_group_separator_height"
+                    android:background="@android:color/darker_gray" />
+
+                <com.genesis.cloudcarepatient.CustomEditText
+                    android:id="@+id/patient_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sample_edit_text_default_height"
+                    android:background="@android:color/transparent"
+                    android:hint="Age"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/sample_edit_text_padding_horizontal"
+                    android:paddingRight="@dimen/sample_edit_text_padding_horizontal"
+                    android:textSize="@dimen/sample_edit_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/patient_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/form_submit_shape"
+                android:text="Submit"
+                android:textColor="#ffffff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

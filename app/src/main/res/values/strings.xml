@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cloud Care Patient</string>
+    <string name="title_activity_another">AnotherActivity</string>
 </resources>

@@ -5,6 +5,10 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.genesis.cloudcarepatient"
+
+        manifestPlaceholders = [onesignal_app_id               : "3410b4aa-f711-4d11-9b0a-a85bdfb1df2a",
+                                onesignal_google_project_number: "REMOTE"]
+
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -17,19 +21,38 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '25.3.0'
+                }
+            }
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+
+
+
+    compile 'com.github.battleent:BlankSpace:1.0.3'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.github.armcha:SpaceNavigationView:1.6.0'
+    compile 'com.github.bumptech.glide:glide:3.8.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.cuboid:cuboidcirclebutton:1.0.3'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services-auth:11.0.4'
     compile 'pub.devrel:easypermissions:0.3.0'
     compile 'com.android.support:recyclerview-v7:25.3.1'
-
-
+    compile 'com.codewaves.stickyheadergrid:stickyheadergrid:0.9.6'
+    compile 'com.onesignal:OneSignal:3.+@aar'
+    compile 'com.google.android.gms:play-services-gcm:11.0.4'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
 }
 apply plugin: 'com.google.gms.google-services'
