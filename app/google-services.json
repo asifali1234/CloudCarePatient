@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "441675227162",
+    "project_id": "cloudcarepatient"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441675227162:android:913dda45b965aaa9",
+        "android_client_info": {
+          "package_name": "com.genesis.cloudcarepatient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441675227162-bmmq3a9ibj5l2jm2ia511pmhetisv3q9.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "441675227162-mbgqth7hre8h31b39eqqr9rq9p3jl8oc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.genesis.cloudcarepatient",
+            "certificate_hash": "9d5f52228f1288e0d800b7b05f8c8bcc60c3d0e5"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJT6BV7eHYW8fiz7dvLyKnQTwglt15zwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
