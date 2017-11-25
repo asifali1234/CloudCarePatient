@@ -123,6 +123,112 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:text="View Health History"
+            android:layout_height="40dp"
+            android:id="@+id/view_health"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/start_updates_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/narrow_space"
+            android:layout_weight="0.5"
+            android:text="@string/request_activity_updates" />
+
+        <Button
+            android:id="@+id/stop_updates_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/narrow_space"
+            android:layout_weight="0.5"
+            android:text="@string/remove_activity_updates" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/total_activity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/narrow_space"
+        android:layout_marginTop="@dimen/narrow_space"
+        android:text="@string/activity_index_title"
+        android:textColor="#ffffee"
+        android:textSize="@dimen/headline_text_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:textColor="#ffffee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/progress_bar_top_margin"
+            android:text="@string/activity_bad"
+            android:textAlignment="center"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:layout_weight="6"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@drawable/seekbar_thumb" />
+
+        <TextView
+            android:textColor="#ffffee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/progress_bar_top_margin"
+            android:layout_weight="2"
+            android:text="@string/activity_good"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="#ffffee"
+        android:id="@+id/detected_activities_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/narrow_space"
+        android:layout_marginTop="@dimen/narrow_space"
+        android:text="@string/detected_activities_title"
+        android:textSize="@dimen/headline_text_size" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activity_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:showIn="@layout/list_item">
+
+    </android.support.v7.widget.RecyclerView>
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="activity_icons_array">
+        <item>@drawable/ic_car</item>
+        <item>@drawable/ic_bike</item>
+        <item>@drawable/ic_walk</item>
+        <item>@drawable/ic_still</item>
+        <item>@drawable/ic_drunk</item>
+        <item>@drawable/ic_ship</item>
+    </integer-array>
+</resources>

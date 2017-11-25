@@ -14,6 +14,7 @@ import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
 import com.onesignal.OneSignal;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MyNotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
@@ -32,8 +33,14 @@ public class MyNotificationOpenedHandler implements OneSignal.NotificationOpened
         //Else, if we have not set any additional data MainActivity is opened.
         Log.e("OneSignal Notification", data.toString());
         Intent i = new Intent(AppController.getContext(),AccessGrantActivity.class);
-        i.putExtra("","");
-
+        i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            i.putExtra("email",data.getString("email"));
+            i.putExtra("name",data.getString("name"));
+            i.putExtra("reqtype",data.getString("reqtype"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         AppController.getContext().startActivity(i);
 
 //        if (data != null) {

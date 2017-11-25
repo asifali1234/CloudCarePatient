@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -45,18 +46,39 @@ public class AccessGrantActivity extends AppCompatActivity {
         grant = (Button) findViewById(R.id.grant_access);
         reject = (Button) findViewById(R.id.reject_access);
 
+        final String email = getIntent().getStringExtra("email");
+        final String name = getIntent().getStringExtra("name");
+        final String reqtype = getIntent().getStringExtra("reqtype");
+
+        doctordetails.setText("Do you want to give Dr. " + name + " access to you Medical Records");
+
         grant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 //                String example_url = "http://ec2-13-58-90-106.us-east-2.compute.amazonaws.com/checkUserexists";
-                String example_url = "http://20.20.4.84:3000/checkUserexists";
+                String example_url = "http://20.20.4.84:3000/givePermission";
 
                 JSONObject auth = new JSONObject();
 
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("patientbean", 0);
+
+                Gson gson = new Gson();
+
+
+                String jsonret = preferences.getString("patientbean","");
+                PatientBean pbret = gson.fromJson(jsonret,PatientBean.class);
+
+
+
 
                 try {
-                    auth.put("", "");
+                    auth.put("status", true);
+                    auth.put("name", name);
+                    auth.put("email",email);
+                    auth.put("reqtype",reqtype);
+                    auth.put("nexthash",pbret.getNextHash());
+
 
 
 
@@ -79,6 +101,24 @@ public class AccessGrantActivity extends AppCompatActivity {
         reject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                String example_url = "http://ec2-13-58-90-106.us-east-2.compute.amazonaws.com/checkUserexists";
+                String example_url = "http://20.20.4.84:3000/givePermission";
+
+                JSONObject auth = new JSONObject();
+
+
+                try {
+                    auth.put("status", false);
+
+
+
+                    requestApi(auth, example_url, "POST");
+
+                }
+                catch (JSONException e){
+                    Log.e(TAG,"Json Error " +  e.toString());
+                }
 
             }
         });
@@ -122,6 +162,10 @@ public class AccessGrantActivity extends AppCompatActivity {
 
             }
         });
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                15000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         AppController.getInstance().addToRequestQueue(request);
     }
 
