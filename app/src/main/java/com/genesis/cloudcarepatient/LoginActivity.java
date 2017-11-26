@@ -260,20 +260,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Log.e(TAG, "Name: " + personName + ", email: " + personEmail
                     + ", Image: " + personPhotoUrl);
 
-//            signInEditor = signInInfo.edit();
-//            signInEditor.clear();
-//            signInEditor.putString("email",email);
-//            signInEditor.putString("name",personName);
-//            signInEditor.apply();
-
-
 
 
             JSONObject auth = new JSONObject();
 
             JSONObject patient = new JSONObject();
-
-//            PatientBean temppb = new PatientBean();
 
             try {
                 auth.put("googleId", googleID);
@@ -293,35 +284,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 //                patient.put("photoURL","address");
 
 
-//                temppb.setGoogleID(googleID);
-//                temppb.setAge("21");
-//                temppb.setPhotoURL(personPhotoUrl);
-//                temppb.setEmail(personEmail);
-//                temppb.setBloodGroup("B +Ve");
-//                temppb.setAddress("PYRA - 34");
-//                temppb.setGender("M");
-//                temppb.setPhn("8594014280");
-//                temppb.setName(personName);
-
                 requestApi(auth, example_url, "POST");
-
-//                Intent i = new Intent(LoginActivity.this,PatientActivity.class);
-//                i.putExtra("patientbeantemp",temppb);
-//
-//                startActivity(i);
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-
-//            txtName.setText(personName);
-//            txtEmail.setText(email);
-//            Glide.with(getApplicationContext()).load(personPhotoUrl)
-//                    .thumbnail(0.5f)
-//                    .crossFade()
-//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                    .into(imgProfilePic);
 
         } else {
 

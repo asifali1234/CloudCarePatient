@@ -103,18 +103,19 @@ public class PatientActivity extends AppCompatActivity implements
         String jsonret = preferences.getString("patientbean","");
         pb = gson.fromJson(jsonret,PatientBean.class);
 
+        if(pb!=null) {
+            personBloodGroup.setText(pb.getBloodGroup());
+            personGender.setText(pb.getGender());
+            personEmail.setText(pb.getEmail());
+            personPhone.setText(pb.getPhn());
+            personName.setText(pb.getName());
+            Glide.with(getApplicationContext()).load(pb.getPhotoURL())
+                    .thumbnail(0.5f)
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(personImage);
 
-        personBloodGroup.setText(pb.getBloodGroup());
-        personGender.setText(pb.getGender());
-        personEmail.setText(pb.getEmail());
-        personPhone.setText(pb.getPhn());
-        personName.setText(pb.getName());
-
-        Glide.with(getApplicationContext()).load(pb.getPhotoURL())
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(personImage);
+        }
 
 
 
@@ -142,16 +143,16 @@ public class PatientActivity extends AppCompatActivity implements
             }
         });
 
-
-        Button b = (Button) findViewById(R.id.view_health);
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PatientActivity.this,ViewRecordActivity.class);
-                startActivity(i);
-            }
-        });
+//
+//        Button b = (Button) findViewById(R.id.view_health);
+//
+//        b.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(PatientActivity.this,ViewRecordActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
 

@@ -43,6 +43,29 @@ public class MyNotificationOpenedHandler implements OneSignal.NotificationOpened
         }
         AppController.getContext().startActivity(i);
 
+        Log.e("OneSignal Notifican sdc", data.toString());
+
+        try{
+
+            Intent i2 = new Intent(AppController.getContext(),AccessGrantActivity.class);
+//        i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+            try {
+                i.putExtra("email",data.getString("email"));
+                i.putExtra("name",data.getString("name"));
+                i.putExtra("reqtype",data.getString("reqtype"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            AppController.getContext().startActivity(i2);
+
+        }
+        catch (Exception e){
+            Log.e("error in intent" , e.toString());
+        }
+
+
+        Log.e("OneSigndsdcsd Notition", data.toString());
+
 //        if (data != null) {
 //            activityToBeOpened = data.optString("activityToBeOpened", null);
 //            if (activityToBeOpened != null && activityToBeOpened.equals("AccessGrantActivity")) {
@@ -66,13 +89,13 @@ public class MyNotificationOpenedHandler implements OneSignal.NotificationOpened
 
         //If we send notification with action buttons we need to specidy the button id's and retrieve it to
         //do the necessary operation.
-        if (actionType == OSNotificationAction.ActionType.ActionTaken) {
-            Log.i("OneSignalExample", "Button pressed with id: " + result.action.actionID);
-            if (result.action.actionID.equals("ActionOne")) {
-                Toast.makeText(AppController.getContext(), "ActionOne Button was pressed", Toast.LENGTH_LONG).show();
-            } else if (result.action.actionID.equals("ActionTwo")) {
-                Toast.makeText(AppController.getContext(), "ActionTwo Button was pressed", Toast.LENGTH_LONG).show();
-            }
-        }
+//        if (actionType == OSNotificationAction.ActionType.ActionTaken) {
+//            Log.i("OneSignalExample", "Button pressed with id: " + result.action.actionID);
+//            if (result.action.actionID.equals("ActionOne")) {
+//                Toast.makeText(AppController.getContext(), "ActionOne Button was pressed", Toast.LENGTH_LONG).show();
+//            } else if (result.action.actionID.equals("ActionTwo")) {
+//                Toast.makeText(AppController.getContext(), "ActionTwo Button was pressed", Toast.LENGTH_LONG).show();
+//            }
+//        }
     }
 }

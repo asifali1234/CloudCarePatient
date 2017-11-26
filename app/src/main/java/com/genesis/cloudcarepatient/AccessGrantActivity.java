@@ -50,7 +50,10 @@ public class AccessGrantActivity extends AppCompatActivity {
         final String name = getIntent().getStringExtra("name");
         final String reqtype = getIntent().getStringExtra("reqtype");
 
-        doctordetails.setText("Do you want to give Dr. " + name + " access to you Medical Records");
+        if(reqtype.equalsIgnoreCase("0"))
+            doctordetails.setText("Do you want to give Dr. " + name + " READ access to you Medical Records");
+        else
+            doctordetails.setText("Do you want to give Dr. " + name + " WRITE access to you Medical Records");
 
         grant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,6 +162,8 @@ public class AccessGrantActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG,"Volley Error my" + error.toString());
+
+                if(error.equals())
 
             }
         });
