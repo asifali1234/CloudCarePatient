@@ -162,8 +162,7 @@ public class AccessGrantActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG,"Volley Error my" + error.toString());
-
-                if(error.equals())
+                
 
             }
         });
